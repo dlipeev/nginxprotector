@@ -54,8 +54,8 @@ def blame_ips(ips):
         return
     with open(ALREADY_BLOCKED_IPS_LIST, 'a') as the_file:
         for bad_ip in ips:
-            the_file.write(f'{bad_ip}\n')
-            os.system(f'iptables -I INPUT 4 -p tcp -j DROP -s {bad_ip}')
+            the_file.write(bad_ip + '\n')
+            os.system('iptables -I INPUT 4 -p tcp -j DROP -s ' + bad_ip)
 
 
 if os.path.exists(ALREADY_BLOCKED_IPS_LIST):
