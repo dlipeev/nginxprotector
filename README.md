@@ -1,0 +1,2 @@
+# nginxprotector
+use via stdin
