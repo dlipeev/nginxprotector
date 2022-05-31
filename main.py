@@ -64,8 +64,8 @@ if os.path.exists(ALREADY_BLOCKED_IPS_LIST):
     for rec in tmp:
         already_blocked_ips.append(rec.strip())
 
-print(already_blocked_ips)
-
+# print(already_blocked_ips)
+print('запустилися\n')
 try:
     for line in sys.stdin:
         # print(line)
@@ -88,7 +88,7 @@ try:
 except KeyboardInterrupt:
     pass
 finally:
-    print('останавливаемся...')
+    print('останавливаюсь...\n')
     ip_freq_sorted = sorted(ip_freq.items(), key=lambda x: x[1], reverse = True)
     for rec in ip_freq_sorted:
         if rec[1] > DDOS_THRESHOLD:
@@ -96,5 +96,6 @@ finally:
     for ip in bad_ips:
         print(ip)
     blame_ips(bad_ips)
+    print('остановился\n')
 
 
